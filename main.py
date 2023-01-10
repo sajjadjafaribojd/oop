@@ -24,4 +24,20 @@ obj_0=MyClass(2, 3)
 print(obj_0) #<__main__.MyClass object at 0x7f70c264ace0>
 print(obj_0.sum()) #5
 print(obj_0.multiplication()) #6
- 
+
+class Student():
+    '''
+        This class get name and score each student and append to the list.
+    '''
+    def __init__(self,name:str,score:int) -> dict:
+        self.information={}
+        self.information['name'] = name
+        self.information['score'] = score
+        
+    def get_student_information(self):
+        '''
+        This method return student information.
+        '''
+        return self.information
+obj_1 = Student('Sajjad', 20)    
+print(obj_1.get_student_information()) #{'name': 'Sajjad', 'score': 20}
