@@ -57,7 +57,27 @@ print(obj_2.model) #peugeot
 print(obj_3.model) #peugeot
 print(obj_2.tip) #206 - we can access variable.
 print(obj_3.tip) #208 - we can access variable. 
-    
-        
-    
-    
+  
+class MyClass1:
+    '''
+        This class consist of public variable.
+    '''
+    global_list=[] #class variable - public variable.
+    def __init__(self):
+        pass
+    def my_func(self,arg_0):
+        '''
+        This method return student information.
+        '''
+        return self.global_list.append(arg_0)  
+obj_0 = MyClass1()
+obj_1 = MyClass1()
+obj_0.my_func(1)
+obj_0.my_func(2)
+obj_0.my_func(3)
+
+print(obj_0.global_list) #[1, 2, 3] - we call global variable.
+print(obj_1.global_list) #[1, 2, 3] - we call global variable. because global_list is a global or general variable so when we add value with obj_0 then obj_1 also has access to it.
+
+
+
