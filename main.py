@@ -120,4 +120,27 @@ print(obj_0.__dict__) # {'var_a': 1, '_MyPrivateClass__b': 2}
 print(obj_0._MyPrivateClass__b) #2 name mangling.
 print(obj_0.my_func())  #3
              
-        
+             
+             
+#Private method in class -  we can define and access private methods like private variables.     
+class PrivateMethodClass:
+    '''
+        This class consist of private method.
+    '''
+    def __my_private_method(self):
+        '''
+        This is a private method and return a string.
+        '''
+        self.result= 'This is a private method'
+        return self.result
+    def  my_public_class(self):
+        '''
+        This is a public method and return a string.
+        '''
+        self.result= 'This is a public method'
+        return self.result
+
+obj_0=PrivateMethodClass()
+
+print(obj_0.my_public_class()) #This is a public method
+print(obj_0._PrivateMethodClass__my_private_method()) #This is a private method
