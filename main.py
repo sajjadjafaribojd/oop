@@ -146,3 +146,16 @@ print(obj_0.my_public_class()) #This is a public method
 print(obj_0._PrivateMethodClass__my_private_method()) #This is a private method
 
 #OOP (Object Oriented Programing) - part 2
+# Dunder method and overloading:
+# __init__
+# __str__
+# __repr__
+# __len__
+# __getitem__ 
+# __setitem__
+# __call__
+# __add__
+# Data descriptor:
+# __set__
+# __get__
+
