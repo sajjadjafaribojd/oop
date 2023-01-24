@@ -1,4 +1,4 @@
-#OOP (Object Oriented Programing)
+#OOP (Object Oriented Programing) - part 1
 
 class MyClass():
     '''
@@ -144,3 +144,5 @@ obj_0=PrivateMethodClass()
 
 print(obj_0.my_public_class()) #This is a public method
 print(obj_0._PrivateMethodClass__my_private_method()) #This is a private method
+
+#OOP (Object Oriented Programing) - part 2
