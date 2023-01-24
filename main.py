@@ -79,5 +79,22 @@ obj_0.my_func(3)
 print(obj_0.global_list) #[1, 2, 3] - we call global variable.
 print(obj_1.global_list) #[1, 2, 3] - we call global variable. because global_list is a global or general variable so when we add value with obj_0 then obj_1 also has access to it.
 
-
-
+#Private variable in class
+class PrivateVariable:
+    '''
+        This class consist of private variable.
+    '''
+    def __init__(self,a,b):
+        self.a = a
+        self.__b = b #private  - not accessible out of class normally.
+    def my_func(self) -> int:
+        '''
+        This method return private variable.
+        '''
+        self.__b +=1
+        return(self.__b)
+        
+obj_0 = PrivateVariable(1, 2)
+print(obj_0.a) # 1
+#print(obj_0.__b) ## AttributeError - because 'b' is a private variable we can not access that out of class with normal calls. but we can access private variables by other methods in class.
+print(obj_0.my_func()) #3 - for access to __b variable we should call  my_func method.
