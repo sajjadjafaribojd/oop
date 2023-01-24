@@ -98,3 +98,26 @@ obj_0 = PrivateVariable(1, 2)
 print(obj_0.a) # 1
 #print(obj_0.__b) ## AttributeError - because 'b' is a private variable we can not access that out of class with normal calls. but we can access private variables by other methods in class.
 print(obj_0.my_func()) #3 - for access to __b variable we should call  my_func method.
+
+#Access private variables with name mangling.
+class MyPrivateClass:
+    '''
+        This class consist of private variable.
+    '''
+    def __init__(self,var_a,b):
+        self.var_a = var_a    #public variable
+        self.__b = b  #private variable.
+    
+    def my_func(self):
+        '''
+        This method return private variable.
+        '''
+        self.__b+=1
+        return (self.__b)
+obj_0=MyPrivateClass(1, 2)
+print(obj_0.var_a) #1 
+print(obj_0.__dict__) # {'var_a': 1, '_MyPrivateClass__b': 2} 
+print(obj_0._MyPrivateClass__b) #2 name mangling.
+print(obj_0.my_func())  #3
+             
+        
