@@ -159,3 +159,57 @@ print(obj_0._PrivateMethodClass__my_private_method()) #This is a private method
 # __set__
 # __get__
 
+class MyClass2:
+    '''
+        This class consist of dunder method.
+    '''
+    def __init__(self):
+        self.lst=[45,46,21]
+
+obj_0=MyClass2()
+print(obj_0)     #<__main__.MyClass2 object at 0x7f6186567b80>
+print(obj_0.lst) #[45, 46, 21] 
+
+class MyClass3:
+    '''
+        This class consist of dunder method.
+    '''
+    def __init__(self):
+        self.lst=[45,46,21]
+    def __str__(self):
+        return str(self.lst)    
+
+obj_0=MyClass3()
+print(obj_0)     #[45, 46, 21]   
+print(obj_0.lst) #[45, 46, 21]  
+
+class MyClass4:
+    '''
+        This class consist of dunder method.
+    '''
+    def __init__(self):
+        self.new_list=[60,32,95]
+    def __len__(self):
+        return len(self.new_list)
+    def __getitem__(self,new_list_index):
+        return self.new_list[new_list_index]
+    def __setitem__(self,new_list_item,value):
+        self.new_list[new_list_item] = value
+    
+
+obj_4=MyClass4()
+print(obj_4.new_list)
+print(len(obj_4)) #3
+#print(len(obj_4)) #without __len__ method: TypeError: object of type 'MyClass4' has no len().
+print(obj_4[1]) # get index from   __getitem__ method.
+obj_4[1]=60 #change list item with __setitem__ method.
+print(len(obj_4)) 
+print(obj_4.new_list)
+
+
+
+
+
+
+
+  
