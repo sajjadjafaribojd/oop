@@ -195,18 +195,35 @@ class MyClass4:
         return self.new_list[new_list_index]
     def __setitem__(self,new_list_item,value):
         self.new_list[new_list_item] = value
+    def __str__ (self):
+        return str(self.new_list)   
     
 
 obj_4=MyClass4()
-print(obj_4.new_list)
+print(obj_4.new_list) #[60,32,95]
 print(len(obj_4)) #3
 #print(len(obj_4)) #without __len__ method: TypeError: object of type 'MyClass4' has no len().
 print(obj_4[1]) # get index from   __getitem__ method.
-obj_4[1]=60 #change list item with __setitem__ method.
+obj_4[1]=39 #change list item with __setitem__ method.
 print(len(obj_4)) 
-print(obj_4.new_list)
+print(obj_4.new_list) #[39,32,95]
+print(obj_4) #[39,32,95] - get data from __str__
+class Address:
+    '''
+        This class consist of dunder method.
+    '''
+    def __init__(self,c,s,z):
+        self.city=c
+        self.street=s
+        self.zipcode=z
+    def __str__(self):
+        lst=[]
+        lst.append(f'{self.city} - {self.street} - {self.zipcode}') 
+        return ' '.join(lst)
+obj_0=Address('Tehran','pirozi','123')
+print(obj_0) # Tehran - piroozi - 123     
 
-
+#OOP (Object Oriented Programing) - part 3
 
 
 
