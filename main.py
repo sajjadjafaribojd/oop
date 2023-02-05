@@ -284,3 +284,51 @@ class D1(B1,B2):
 obj_6 =D1(1) # 1 2 3    
 print(D1.__mro__) #(<class '__main__.D1'>, <class '__main__.B1'>, <class '__main__.B2'>, <class 'object'>)            
   
+class Employee:
+      def __init__(self, id, name):
+          self.id = id
+          self.name = name
+    
+
+ #This example is used to calculate salary.
+class HE(Employee):
+      def __init__(self, id, name, hw, hr):
+          super().__init__(id, name)
+          self.hw = hw
+          self.hr = hr
+ 
+      def h(self):
+          return self.hw * self.hr      
+      
+class SE(Employee):
+      def __init__(self, id, name, s):
+          super().__init__(id, name)
+          self.s = s
+      
+      def h(self):
+          return self.s   
+    
+class CE(SE):
+      def __init__(self, id, name, s, c):
+          super().__init__(id, name , s)
+          self.c = c
+      
+      def h(self):
+          return self.s + self.c   
+
+class P:
+    def payroll(self,lst):
+        for i in lst:
+            print(f'{i.id}:{i.name} = {i.h()}')  
+ob1 = HE(1,'sara', 4, 100000)            
+ob2 = SE(2,'ali',5000000)
+ob3 = CE(3,'taha',3000000,500000)
+
+ob = P()
+ob.payroll([ob1, ob2, ob3])  
+'''  
+1:sara = 400000
+2:ali = 5000000
+3:taha = 3500000
+'''   
+        
