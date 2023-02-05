@@ -331,4 +331,23 @@ ob.payroll([ob1, ob2, ob3])
 2:ali = 5000000
 3:taha = 3500000
 '''   
-        
+
+#Diamond problem
+#If a class has 2 parents and we call the same name and common function in both classes, which class returns the response? The class that is written first will be called.      
+class A:
+   def f(self):
+       print('A')
+       
+class B(A):
+   def f(self):
+       print('B')
+       
+class C(A):
+   def f(self):
+       print('C')
+       
+class D(B, C):
+    pass
+
+d = D()    
+d.f()   # B
