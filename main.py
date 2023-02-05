@@ -254,8 +254,8 @@ class StudentClass(Person):
 obj_5=StudentClass('Sajjad',20)
 obj_5.welcome() #Welcome: Sajjad
 obj_5.show() #name:  Sajjad       
-            
-        
+print(StudentClass.__mro__) #(<class '__main__.StudentClass'>, <class '__main__.Person'>, <class 'object'>)
+#Using the Sajjad method, you can see the parents of each class. The parent class also inherits from the object class.        
 
 
   
