@@ -223,10 +223,39 @@ class Address:
 obj_0=Address('Tehran','pirozi','123')
 print(obj_0) # Tehran - piroozi - 123     
 
-#OOP (Object Oriented Programing) - part 3
+#OOP (Object Oriented Programing) - part 3 - Inheritance
+class Person():
+    '''
+        This is a parent class.
+    '''
+    def __init__(self,name):
+        self.name=name
+        
+    def show(self):
+        '''
+            print student name.
+        '''
+        print('name: ',self.name)
 
-
-
+class StudentClass(Person):
+    '''
+        This is a child class.
+    '''
+    def __init__(self,name,score):
+        self.score=score
+        Person.__init__(self, name) #For variable calls  from the parent method we should have use the class name and__init__ dunder method.
+    
+    def welcome(self):
+        '''
+            print welcome student message.
+        '''
+        print('Welcome:',self.name)
+          
+obj_5=StudentClass('Sajjad',20)
+obj_5.welcome() #Welcome: Sajjad
+obj_5.show() #name:  Sajjad       
+            
+        
 
 
   
