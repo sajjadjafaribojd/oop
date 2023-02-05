@@ -371,3 +371,17 @@ d = D(1, 2)
 d.h()   # 1
 d.f()   # 1 2
 
+#Private and Protected method in class
+class B:
+    def __f(self):
+        return 'A'
+    
+    def g(self):
+        print(self.__f())
+        
+class D(B):    
+    def __f(self):
+        return 'B'
+
+d = D()
+d.g()    # A    
