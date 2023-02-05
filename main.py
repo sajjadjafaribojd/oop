@@ -257,5 +257,30 @@ obj_5.show() #name:  Sajjad
 print(StudentClass.__mro__) #(<class '__main__.StudentClass'>, <class '__main__.Person'>, <class 'object'>)
 #Using the Sajjad method, you can see the parents of each class. The parent class also inherits from the object class.        
 
-
+#In the example below D class has 2 parents.Derived from two classes B1 and B2.
+class B1:
+    '''
+        This is a parent class.
+    '''
+    def __init__(self,x):
+        self.x=x
+        print(x)
+class B2:
+    '''
+        This is a parent class.
+    '''
+    def __init__(self,y):
+        self.y=y
+        print(y)
+class D1(B1,B2):
+    '''
+        This is a child class.
+    '''
+    def __init__(self,z):
+        print(z)
+        B1.__init__(self,2)
+        B2.__init__(self,3)
+                
+obj_6 =D1(1) # 1 2 3    
+print(D1.__mro__) #(<class '__main__.D1'>, <class '__main__.B1'>, <class '__main__.B2'>, <class 'object'>)            
   
