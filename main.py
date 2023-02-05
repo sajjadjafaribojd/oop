@@ -351,3 +351,23 @@ class D(B, C):
 
 d = D()    
 d.f()   # B
+
+#Private and Protected variable  in class
+class B: 
+    def __init__(self, x, y):
+        self._a = x      # protected
+        self.__b = y     # private
+    
+    def f(self):       
+        print(self._a)
+        print(self.__b) 
+    
+class D(B):    
+    def h(self):
+        print(self._a)
+        #print(self.__b) # error 'D' object has no  attribute '_D__b'
+        
+d = D(1, 2)        
+d.h()   # 1
+d.f()   # 1 2
+
